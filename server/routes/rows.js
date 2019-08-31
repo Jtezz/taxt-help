@@ -17,9 +17,9 @@ router.get('/rows/:id',(req,res) =>{ //eliminar una consulta
 
 //guardar filas 
 router.post('/rows/save',(req,res) => {
-    const {fecha,sueldoImpo,sueldoRete,HonorableImp,HonorableRete}=req.body;
-    const query=`insert into usuario(fecha,sueldoImpo,sueldoRete,HonorableImp,HonorableRete) value(?,?,?,?,?)`;
-    mysqlConnection.query(query,[fecha,sueldoImpo,sueldoRete,HonorableImp,HonorableRete],(err,rows,fields) =>{
+    const {Usuario,Mes,sueldoImpo,sueldoRete,HonorableImp,HonorableRete}=req.body;
+    const query=`insert into rowsusuario(usuario,mes,sueldoImponible,sueldoRetenido,Honorarios,impHonorariosRetenido) value(?,?,?,?,?,?)`;
+    mysqlConnection.query(query,[Usuario,Mes,sueldoImpo,sueldoRete,HonorableImp,HonorableRete],(err,rows,fields) =>{
     if(!err){
         res.json({Status: 'Registro con exito!'});
     }else{

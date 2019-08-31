@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
 
 //servicios
-import {UsuarioService} from './servicios/usuario.service'
+import {UsuarioService} from './servicios/usuario.service';
+import { ImpuestosComponent } from './componentes/impuestos/impuestos.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    ImpuestosComponent
   ],
   imports: [
     BrowserModule,

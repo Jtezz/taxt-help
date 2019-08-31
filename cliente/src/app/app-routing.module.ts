@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 //import componentes
 import { UsuarioComponent} from './componentes/usuario/usuario.component'
+import {ImpuestosComponent} from './componentes/Impuestos/Impuestos.component'
 
 const routes: Routes = [
   {
     path:'sing-up',
     component: UsuarioComponent
+  },
+  {
+    path:'impuestos',
+    component:ImpuestosComponent
   }
 ];
 
