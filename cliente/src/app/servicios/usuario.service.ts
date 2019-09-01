@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Usuario } from '../modelos/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -11,5 +12,8 @@ export class UsuarioService {
 
   login(rut:string) {
     return this.http.get(`${this.API_URI}/login/${rut}`);
+  }
+  registro(usuario:Usuario){
+    return this.http.post(`${this.API_URI}/register`,usuario);
   }
 }

@@ -12,8 +12,12 @@ import{Usuario} from '../../modelos/usuario'
 })
 export class UsuarioComponent implements OnInit {
   public rut:string;
-  
   public aux:Usuario={
+    id:null,
+    nombre: '',
+    rut:''
+  };
+  public aux2:Usuario={
     id:null,
     nombre: '',
     rut:''
@@ -22,24 +26,25 @@ export class UsuarioComponent implements OnInit {
 
   ngOnInit() {
   }
-  logIn(rut: string, event: Event) {
-    event.preventDefault(); // Avoid default action for the submit button of the login form
-
-    // Calls service to login user to the api rest
+  logIn(){
     this.usuarioServicio.login(this.rut).subscribe(
-
       res => {
         this.aux=res;
-       console.log(res);
-
+        console.log(res);
+        console.log(this.aux)
       },
-      error => {
-        console.error(error);
-      }
+      err =>console.error(err)
+
     );
-
   }
-
+  registrar(){
+    this.usuarioServicio.registro(this.aux2).subscribe(
+      res=>{
+        console.log(res);
+      },
+      err=>console.log(err)
+    )
+  }
   
 
 }

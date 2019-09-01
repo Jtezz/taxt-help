@@ -20,7 +20,7 @@ router.post('/register',(req,res) => {
     const query=`insert into usuario(nombre,rut) value(?,?)`;
     mysqlConnection.query(query,[nombre,rut],(err,rows,fields) =>{
     if(!err){
-        res.json(rows);
+        res.json("Resgistrado!");
     }else{
         console.log(err);
     }
