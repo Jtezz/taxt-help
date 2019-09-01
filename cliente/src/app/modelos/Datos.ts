@@ -1,6 +1,7 @@
 export interface datos{
    Usuario?:number;
-   Mes?:Date;
+   Ano?:number,
+   Mes?:String;
    sueldoImpo?:number;
    sueldoRete?:number;
    HonorableImp?:number;

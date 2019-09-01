@@ -1,127 +1,133 @@
-<p>Esto es un párrafo anterior a la tabla.</p>
-
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div class="container">
+    <div class="row col-md-10 col-md-offset-1 custyle">
+    <table class="table table-striped custab">
   <p>{{usserLogged}}</p>
 <table>
     <thead>
     <tr>
+    <th>Año</th>
     <th>Mes</th>
     <th>Sueldo Imponible</th>
     <th>Sueldo Retenido</th>
     <th>Honorarios Brutos</th>
     <th>Honorarios Retenidos</th>
+    <th>Accion</th>
     </tr>
 </thead>
 <tbody>
 <tr>
+    <td><input type="number" min=2019 max=3000 name="2019" [(ngModel)]="Datos1.Ano" placeholder="2019" class="form-control" autofocus></td>
     <td>Enero</td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <button class="btn btn-success btn-block" (click)="guardar1()">Guardar</button>
-    <button class="btn btn-success btn-block" (click)="Limpiar1()">Limpiar</button>
+    <td class="text-center"><a *ngIf="aux1==false" class='btn btn-info btn-xs' (click)="guardar1()"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar1()"> Limpiar</a></td>
 </tr>
 <tr>
+    <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos2.Ano" placeholder="2019" class="form-control" autofocus></td>
     <td>Febrero</td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <button class="btn btn-success btn-block" (click)="guardar2()">Guardar</button>
-    <button class="btn btn-success btn-block" (click)="Limpiar2()">Limpiar</button>
+    <td class="text-center"><a *ngIf="aux2==false" class='btn btn-info btn-xs' (click)="guardar2()"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar2()"> Limpiar</a></td>
     </tr>
 <tr>
+    <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos3.Ano" placeholder="2019" class="form-control" autofocus></td>
     <td>Marzo</td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <button class="btn btn-success btn-block" (click)="guardar3()">Guardar</button>
-    <button class="btn btn-success btn-block" (click)="Limpiar3()">Limpiar</button>
+    <td class="text-center"><a *ngIf="aux3==false" class='btn btn-info btn-xs' (click)="guardar3()"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar3()"> Limpiar</a></td>
 </tr>
 <tr>
+        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos4.Ano" placeholder="2019" class="form-control" autofocus></td>
     <td>Abril</td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <button class="btn btn-success btn-block" (click)="guardar4()">Guardar</button>
-    <button class="btn btn-success btn-block" (click)="Limpiar4()">Limpiar</button>
+    <td class="text-center"><a *ngIf="aux4==false" class='btn btn-info btn-xs' (click)="guardar4()"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar4()"> Limpiar</a></td>
 </tr>
 <tr>
+        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos5.Ano" placeholder="2019" class="form-control" autofocus></td>
     <td>Mayo</td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <button class="btn btn-success btn-block" (click)="guardar5()">Guardar</button>
-    <button class="btn btn-success btn-block" (click)="Limpiar5()">Limpiar</button>
+    <td class="text-center"><a *ngIf="aux5==false" class='btn btn-info btn-xs' (click)="guardar5()"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar5()"> Limpiar</a></td>
 </tr>
 <tr>
+        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos6.Ano" placeholder="2019" class="form-control" autofocus></td>
     <td>Junio</td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <button class="btn btn-success btn-block" (click)="guardar6()">Guardar</button>
-    <button class="btn btn-success btn-block" (click)="Limpiar6()">Limpiar</button>
+    <td class="text-center"><a *ngIf="aux6==false" class='btn btn-info btn-xs' (click)="guardar6()"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar6()"> Limpiar</a></td>
 </tr>
 <tr>
+        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos7.Ano" placeholder="2019" class="form-control" autofocus></td>
     <td>Julio</td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <button class="btn btn-success btn-block" (click)="guardar7()">Guardar</button>
-    <button class="btn btn-success btn-block" (click)="Limpiar7()">Limpiar</button>
+    <td class="text-center"><a *ngIf="aux7==false" class='btn btn-info btn-xs' (click)="guardar7()"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar7()"> Limpiar</a></td>
 </tr>
 <tr>
+        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos8.Ano" placeholder="2019" class="form-control" autofocus></td>
     <td>Agosto</td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <button class="btn btn-success btn-block" (click)="guardar8()">Guardar</button>
-    <button class="btn btn-success btn-block" (click)="Limpiar8()">Limpiar</button>
+    <td class="text-center"><a *ngIf="aux8==false" class='btn btn-info btn-xs' (click)="guardar8()"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar8()"> Limpiar</a></td>
 </tr>
 <tr>
+        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos9.Ano" placeholder="2019" class="form-control" autofocus></td>
     <td>Septiembre</td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <button class="btn btn-success btn-block" (click)="guardar9()">Guardar</button>
-    <button class="btn btn-success btn-block" (click)="Limpiar9()">Limpiar</button>
+    <td class="text-center"><a *ngIf="aux9==false" class='btn btn-info btn-xs' (click)="guardar9()"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar9()"> Limpiar</a></td>
 </tr>
 <tr>
+        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos10.Ano" placeholder="2019" class="form-control" autofocus></td>
     <td>Octubre</td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <button class="btn btn-success btn-block" (click)="guardar10()">Guardar</button>
-    <button class="btn btn-success btn-block" (click)="Limpiar10()">Limpiar</button>
+    <td class="text-center"><a *ngIf="aux10==false" class='btn btn-info btn-xs' (click)="guardar10()"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar10()"> Limpiar</a></td>
 </tr>
 <tr>
+        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos11.Ano" placeholder="2019" class="form-control" autofocus></td>
     <td>Noviembre</td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <button class="btn btn-success btn-block" (click)="guardar11()">Guardar</button>
-    <button class="btn btn-success btn-block" (click)="Limpiar11()">Limpiar</button>
+    <td class="text-center"><a *ngIf="aux11==false" class='btn btn-info btn-xs' (click)="guardar11()"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar11()"> Limpiar</a></td>
 </tr>
 <tr>
+        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos12.Ano" placeholder="2019" class="form-control" autofocus></td>
     <td>Diciembre</td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
     <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <button class="btn btn-success btn-block" (click)="guardar12()">Guardar</button>
-    <button class="btn btn-success btn-block" (click)="Limpiar12()">Limpiar</button>
+    <td class="text-center"><a *ngIf="aux12==false" class='btn btn-info btn-xs' (click)="guardar12()"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar12()"> Limpiar</a></td>
 </tr>
 </tbody>
  </table>
 
-<p>Esto es un párrafo posterior a la tabla.</p>
+
     
