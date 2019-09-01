@@ -13,12 +13,12 @@ import{buscadorUsuario} from '../../modelos/buscadorUsuario'
 })
 export class UsuarioComponent implements OnInit {
   public rut:string;
-  
   public aux:Usuario={
     id:null,
     nombre: '',
     rut:''
   };
+
   public aux2:buscadorUsuario={
     rut:'',
     password:''
@@ -38,13 +38,18 @@ export class UsuarioComponent implements OnInit {
         
         console.log(this.usuarioServicio.getUserLoggedIn());
       },
-      error => {
-        console.error(error);
-      }
+      err =>console.error(err)
+
     );
-
   }
-
+  registrar(){
+    this.usuarioServicio.registro(this.aux2).subscribe(
+      res=>{
+        console.log(res);
+      },
+      err=>console.log(err)
+    )
+  }
   
 
 }

@@ -1,3 +1,4 @@
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -33,3 +34,39 @@
         </div>
     </div>
 </body>
+=======
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form action="">
+          <div class="form-grup">
+            <p>Ingrese su rut:</p>
+            <input type="text" name="Rut" [(ngModel)]= "rut" placeholder="ej:123456789-0" class="form-control" autofocus>
+          </div>
+          <button class="btn btn-primary btn-block" (click)="logIn()">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 offset-md-4">
+  <div class="card">
+    <div class="bg-info text-white float-rigth"> Ingrese sus datos :   <i class="fas fa-user-plus "></i>
+ </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-grup">
+        <p>Nombre:</p>
+        <input type="text" name="nombre" [(ngModel)]="aux2.nombre" placeholder="Juan Perez" class="form-control" autofocus>
+        </div>
+        <div class="form-grup">
+        <p>Rut:</p>
+        <input type="text" name="rut" [(ngModel)]="aux2.rut" placeholder="ej: 12345678-9" class="form-control" autofocus>
+        </div>
+        <button class="btn btn-primary btn-block" (click)="registrar()">Registrar</button>
+      </form>
+    </div>
+  </div>
+</div>
