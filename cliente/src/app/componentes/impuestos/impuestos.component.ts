@@ -207,7 +207,6 @@ export class ImpuestosComponent implements OnInit {
                           )
                           }
   Limpiar1(){
-    this.Datos1.Mes=null;
     this.Datos1.sueldoImpo=0;
     this.Datos1.sueldoRete=0;
     this.Datos1.HonorableImp=0; 
@@ -215,14 +214,12 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar2(){
-    this.Datos2.Mes=null;
     this.Datos2.sueldoImpo=0;
     this.Datos2.sueldoRete=0;
     this.Datos2.HonorableImp=0;
     this.Datos2.HonorableRete=0;
   }
   Limpiar3(){
-    this.Datos3.Mes=null;
     this.Datos3.sueldoImpo=0;
     this.Datos3.sueldoRete=0;
     this.Datos3.HonorableImp=0;
@@ -230,7 +227,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar4(){
-    this.Datos4.Mes=null;
     this.Datos4.sueldoImpo=0;
     this.Datos4.sueldoRete=0;
     this.Datos4.HonorableImp=0;
@@ -238,7 +234,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar5(){
-    this.Datos5.Mes=null;
     this.Datos5.sueldoImpo=0;
     this.Datos5.sueldoRete=0;
     this.Datos5.HonorableImp=0;
@@ -246,7 +241,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar6(){
-    this.Datos6.Mes=null;
     this.Datos6.sueldoImpo=0;
     this.Datos6.sueldoRete=0;
     this.Datos6.HonorableImp=0;
@@ -254,7 +248,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar7(){
-    this.Datos7.Mes=null;
     this.Datos7.sueldoImpo=0;
     this.Datos7.sueldoRete=0;
     this.Datos7.HonorableImp=0;
@@ -262,7 +255,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar8(){
-    this.Datos8.Mes=null;
     this.Datos8.sueldoImpo=0;
     this.Datos8.sueldoRete=0;
     this.Datos8.HonorableImp=0;
@@ -270,7 +262,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar9(){
-    this.Datos9.Mes=null;
     this.Datos9.sueldoImpo=0;
     this.Datos9.sueldoRete=0;
     this.Datos9.HonorableImp=0;
@@ -278,7 +269,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar10(){
-    this.Datos10.Mes=null;
     this.Datos10.sueldoImpo=0;
     this.Datos10.sueldoRete=0;
     this.Datos10.HonorableImp=0;
@@ -286,7 +276,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar11(){
-    this.Datos11.Mes=null;
     this.Datos11.sueldoImpo=0;
     this.Datos11.sueldoRete=0;
     this.Datos11.HonorableImp=0;
@@ -294,7 +283,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar12(){
-    this.Datos12.Mes=null;
     this.Datos12.sueldoImpo=0;
     this.Datos12.sueldoRete=0;
     this.Datos12.HonorableImp=0;

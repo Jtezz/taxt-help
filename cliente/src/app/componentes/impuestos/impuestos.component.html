@@ -1,1 +1,126 @@
-<p>impuestos works!</p>
+<p>Esto es un párrafo anterior a la tabla.</p>
+
+<table>
+    <thead>
+    <tr>
+    <th>Mes</th>
+    <th>Sueldo Imponible</th>
+    <th>Sueldo Retenido</th>
+    <th>Honorarios Brutos</th>
+    <th>Honorarios Retenidos</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+    <td>Enero</td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <button class="btn btn-success btn-block" (click)="guardar1()">Guardar</button>
+    <button class="btn btn-success btn-block" (click)="Limpiar1()">Limpiar</button>
+</tr>
+<tr>
+    <td>Febrero</td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <button class="btn btn-success btn-block" (click)="guardar2()">Guardar</button>
+    <button class="btn btn-success btn-block" (click)="Limpiar2()">Limpiar</button>
+    </tr>
+<tr>
+    <td>Marzo</td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <button class="btn btn-success btn-block" (click)="guardar3()">Guardar</button>
+    <button class="btn btn-success btn-block" (click)="Limpiar3()">Limpiar</button>
+</tr>
+<tr>
+    <td>Abril</td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <button class="btn btn-success btn-block" (click)="guardar4()">Guardar</button>
+    <button class="btn btn-success btn-block" (click)="Limpiar4()">Limpiar</button>
+</tr>
+<tr>
+    <td>Mayo</td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <button class="btn btn-success btn-block" (click)="guardar5()">Guardar</button>
+    <button class="btn btn-success btn-block" (click)="Limpiar5()">Limpiar</button>
+</tr>
+<tr>
+    <td>Junio</td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <button class="btn btn-success btn-block" (click)="guardar6()">Guardar</button>
+    <button class="btn btn-success btn-block" (click)="Limpiar6()">Limpiar</button>
+</tr>
+<tr>
+    <td>Julio</td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <button class="btn btn-success btn-block" (click)="guardar7()">Guardar</button>
+    <button class="btn btn-success btn-block" (click)="Limpiar7()">Limpiar</button>
+</tr>
+<tr>
+    <td>Agosto</td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <button class="btn btn-success btn-block" (click)="guardar8()">Guardar</button>
+    <button class="btn btn-success btn-block" (click)="Limpiar8()">Limpiar</button>
+</tr>
+<tr>
+    <td>Septiembre</td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <button class="btn btn-success btn-block" (click)="guardar9()">Guardar</button>
+    <button class="btn btn-success btn-block" (click)="Limpiar9()">Limpiar</button>
+</tr>
+<tr>
+    <td>Octubre</td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <button class="btn btn-success btn-block" (click)="guardar10()">Guardar</button>
+    <button class="btn btn-success btn-block" (click)="Limpiar10()">Limpiar</button>
+</tr>
+<tr>
+    <td>Noviembre</td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <button class="btn btn-success btn-block" (click)="guardar11()">Guardar</button>
+    <button class="btn btn-success btn-block" (click)="Limpiar11()">Limpiar</button>
+</tr>
+<tr>
+    <td>Diciembre</td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+    <button class="btn btn-success btn-block" (click)="guardar12()">Guardar</button>
+    <button class="btn btn-success btn-block" (click)="Limpiar12()">Limpiar</button>
+</tr>
+</tbody>
+ </table>
+
+<p>Esto es un párrafo posterior a la tabla.</p>
+    
