@@ -2,10 +2,10 @@ const express = require('express');//requerimos express
 const router = express.Router();//desde express tremos las rutas
 //metodos
 //Login de usuario
-router.get('/login/:rut',(req,res) =>{ //eliminar una consulta
-    const {rut}=req.params;
-    const query=`select * from usuario where rut=?`;
-    mysqlConnection.query(query,[rut],(err,rows,fields) =>{
+router.post('/login',(req,res) =>{ //eliminar una consulta
+    const {rut,password}=req.body;
+    const query=`select * from usuario where rut=? and password=?`;
+    mysqlConnection.query(query,[rut,password],(err,rows,fields) =>{
     if(!err){
         res.json(rows);
     }else{
@@ -16,9 +16,9 @@ router.get('/login/:rut',(req,res) =>{ //eliminar una consulta
 
 //registro de usuario
 router.post('/register',(req,res) => {
-    const {nombre ,rut}=req.body;
-    const query=`insert into usuario(nombre,rut) value(?,?)`;
-    mysqlConnection.query(query,[nombre,rut],(err,rows,fields) =>{
+    const {nombre ,rut, password}=req.body;
+    const query=`insert into usuario(nombre,rut,password) value(?,?,?)`;
+    mysqlConnection.query(query,[nombre,rut,password],(err,rows,fields) =>{
     if(!err){
         res.json(rows);
     }else{

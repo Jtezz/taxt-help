@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {datos} from '../../modelos/Datos'
 import {RowsService} from '../../servicios/rows.service'
-
+import {UsuarioService} from '../../servicios/usuario.service'
+import {Usuario} from '../../modelos/usuario'
 @Component({
   selector: 'app-impuestos',
   templateUrl: './impuestos.component.html',
@@ -9,7 +10,8 @@ import {RowsService} from '../../servicios/rows.service'
 })
 export class ImpuestosComponent implements OnInit {
 
-  constructor(private ImpuestosServicio: RowsService  ) { }
+  constructor(private ImpuestosServicio: RowsService ,
+              private usuarioServicio:UsuarioService ) { }
 
   public Datos1:datos={
     Usuario:null,
@@ -107,9 +109,18 @@ export class ImpuestosComponent implements OnInit {
     HonorableImp:null,
     HonorableRete:null
   }
-
+  public usserLogged: Usuario= this.usuarioServicio.getUserLoggedIn();
+  public DataUser : any ;
   ngOnInit() {
+    this.ImpuestosServicio.getRows(this.usserLogged.id).subscribe(
+      res => {
+        this.DataUser=res;
+      },
+      err =>console.error(err)
+    );
   }
+
+  
   guardar1() {
     this.ImpuestosServicio.GuardarDatos(this.Datos1).subscribe(
       res => {

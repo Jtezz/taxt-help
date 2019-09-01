@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 //importamos el modelo
 import{Usuario} from '../../modelos/usuario'
+import{buscadorUsuario} from '../../modelos/buscadorUsuario'
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
@@ -18,20 +19,24 @@ export class UsuarioComponent implements OnInit {
     nombre: '',
     rut:''
   };
+  public aux2:buscadorUsuario={
+    rut:'',
+    password:''
+  }
   constructor(private usuarioServicio:UsuarioService) { }
 
   ngOnInit() {
   }
-  logIn(rut: string, event: Event) {
+  logIn() {
     event.preventDefault(); // Avoid default action for the submit button of the login form
 
     // Calls service to login user to the api rest
-    this.usuarioServicio.login(this.rut).subscribe(
-
+    this.usuarioServicio.login(this.aux2).subscribe(
       res => {
-        this.aux=res;
-       console.log(res);
-
+        let u: Usuario = res;      //para guardar el usuario en la memoria del navegador  
+        this.usuarioServicio.setUserLoggedIn(u);// guarda y verifica que esta logeado el usuario
+        
+        console.log(this.usuarioServicio.getUserLoggedIn());
       },
       error => {
         console.error(error);
