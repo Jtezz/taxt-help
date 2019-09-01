@@ -207,99 +207,98 @@ export class ImpuestosComponent implements OnInit {
                           )
                           }
   Limpiar1(){
-    Datos1.Mes=null;
-    Datos1.sueldoImpo=0;
-    Datos1.sueldoRete=0;
-    Datos1.HonorableImp=0;
-    Datos1.HonorableRete=0;
+    this.Datos1.Mes=null;
+    this.Datos1.sueldoImpo=0;
+    this.Datos1.sueldoRete=0;
+    this.Datos1.HonorableImp=0; 
+    this.Datos1.HonorableRete=0;
 
   }
   Limpiar2(){
-    Datos2.Mes=null;
-    Datos2.sueldoImpo=0;
-    Datos2.sueldoRete=0;
-    Datos2.HonorableImp=0;
-    Datos2.HonorableRete=0;
-
+    this.Datos2.Mes=null;
+    this.Datos2.sueldoImpo=0;
+    this.Datos2.sueldoRete=0;
+    this.Datos2.HonorableImp=0;
+    this.Datos2.HonorableRete=0;
   }
   Limpiar3(){
-    Datos3.Mes=null;
-    Datos3.sueldoImpo=0;
-    Datos3.sueldoRete=0;
-    Datos3.HonorableImp=0;
-    Datos3.HonorableRete=0;
+    this.Datos3.Mes=null;
+    this.Datos3.sueldoImpo=0;
+    this.Datos3.sueldoRete=0;
+    this.Datos3.HonorableImp=0;
+    this.Datos3.HonorableRete=0;
 
   }
   Limpiar4(){
-    Datos4.Mes=null;
-    Datos4.sueldoImpo=0;
-    Datos4.sueldoRete=0;
-    Datos4.HonorableImp=0;
-    Datos4.HonorableRete=0;
+    this.Datos4.Mes=null;
+    this.Datos4.sueldoImpo=0;
+    this.Datos4.sueldoRete=0;
+    this.Datos4.HonorableImp=0;
+    this.Datos4.HonorableRete=0;
 
   }
   Limpiar5(){
-    Datos5.Mes=null;
-    Datos5.sueldoImpo=0;
-    Datos5.sueldoRete=0;
-    Datos5.HonorableImp=0;
-    Datos5.HonorableRete=0;
+    this.Datos5.Mes=null;
+    this.Datos5.sueldoImpo=0;
+    this.Datos5.sueldoRete=0;
+    this.Datos5.HonorableImp=0;
+    this.Datos5.HonorableRete=0;
 
   }
   Limpiar6(){
-    Datos6.Mes=null;
-    Datos6.sueldoImpo=0;
-    Datos6.sueldoRete=0;
-    Datos6.HonorableImp=0;
-    Datos6.HonorableRete=0;
+    this.Datos6.Mes=null;
+    this.Datos6.sueldoImpo=0;
+    this.Datos6.sueldoRete=0;
+    this.Datos6.HonorableImp=0;
+    this.Datos6.HonorableRete=0;
 
   }
   Limpiar7(){
-    Datos7.Mes=null;
-    Datos7.sueldoImpo=0;
-    Datos7.sueldoRete=0;
-    Datos7.HonorableImp=0;
-    Datos7.HonorableRete=0;
+    this.Datos7.Mes=null;
+    this.Datos7.sueldoImpo=0;
+    this.Datos7.sueldoRete=0;
+    this.Datos7.HonorableImp=0;
+    this.Datos7.HonorableRete=0;
 
   }
   Limpiar8(){
-    Datos8.Mes=null;
-    Datos8.sueldoImpo=0;
-    Datos8.sueldoRete=0;
-    Datos8.HonorableImp=0;
-    Datos8.HonorableRete=0;
+    this.Datos8.Mes=null;
+    this.Datos8.sueldoImpo=0;
+    this.Datos8.sueldoRete=0;
+    this.Datos8.HonorableImp=0;
+    this.Datos8.HonorableRete=0;
 
   }
   Limpiar9(){
-    Datos9.Mes=null;
-    Datos9.sueldoImpo=0;
-    Datos9.sueldoRete=0;
-    Datos9.HonorableImp=0;
-    Datos9.HonorableRete=0;
+    this.Datos9.Mes=null;
+    this.Datos9.sueldoImpo=0;
+    this.Datos9.sueldoRete=0;
+    this.Datos9.HonorableImp=0;
+    this.Datos9.HonorableRete=0;
 
   }
   Limpiar10(){
-    Datos10.Mes=null;
-    Datos10.sueldoImpo=0;
-    Datos10.sueldoRete=0;
-    Datos10.HonorableImp=0;
-    Datos10.HonorableRete=0;
+    this.Datos10.Mes=null;
+    this.Datos10.sueldoImpo=0;
+    this.Datos10.sueldoRete=0;
+    this.Datos10.HonorableImp=0;
+    this.Datos10.HonorableRete=0;
 
   }
   Limpiar11(){
-    Datos11.Mes=null;
-    Datos11.sueldoImpo=0;
-    Datos11.sueldoRete=0;
-    Datos11.HonorableImp=0;
-    Datos11.HonorableRete=0;
+    this.Datos11.Mes=null;
+    this.Datos11.sueldoImpo=0;
+    this.Datos11.sueldoRete=0;
+    this.Datos11.HonorableImp=0;
+    this.Datos11.HonorableRete=0;
 
   }
   Limpiar12(){
-    Datos12.Mes=null;
-    Datos12.sueldoImpo=0;
-    Datos12.sueldoRete=0;
-    Datos12.HonorableImp=0;
-    Datos12.HonorableRete=0;
+    this.Datos12.Mes=null;
+    this.Datos12.sueldoImpo=0;
+    this.Datos12.sueldoRete=0;
+    this.Datos12.HonorableImp=0;
+    this.Datos12.HonorableRete=0;
 
   }
   
