@@ -12,4 +12,7 @@ export class RowsService {
 GuardarDatos(HM:datos){
   return this.http.post(`${this.API_URI}/rows/save`,HM);
 }
+getRows(id:number){//buscar paciente por rut
+  return this.http.get(`${this.API_URI}/rows/${id}`);//son backtick de jav `` alt+parentecis
+}
 }

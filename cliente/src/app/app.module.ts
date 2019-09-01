@@ -12,12 +12,14 @@ import {ImpuestosComponent} from './componentes/impuestos/impuestos.component';
 //servicios
 import {UsuarioService} from './servicios/usuario.service';
 import {RowsService} from './servicios/rows.service';
+import { RegisterComponent } from './componentes/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioComponent,
-    ImpuestosComponent
+    ImpuestosComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

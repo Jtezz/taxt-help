@@ -3,12 +3,13 @@ const router = express.Router();//desde express tremos las rutas
 //metodos
 
 //Traer todas las filas guardadas por el usuario
-router.get('/rows/:id',(req,res) =>{ //eliminar una consulta
+router.get('/rows/:id',(req,res) =>{ 
     const {id}=req.params;
-    const query=`select * from usuario where id=?`;
+    const query=`select * from rowsUsuario where usuario=?`;
     mysqlConnection.query(query,[id],(err,rows,fields) =>{
     if(!err){
-        res.json({Status: 'Filas retornas con exito!'});
+        console.log('filas retornadas con exito');
+        res.json(rows);
     }else{
         console.log(err);
     }
