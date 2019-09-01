@@ -32,7 +32,4 @@ export class UsuarioService {
   registro(usuario:Usuario){
     return this.http.post(`${this.API_URI}/register`,usuario);
   }
-  registro(usuario:Usuario){
-    return this.http.post(`${this.API_URI}/register`,usuario);
-  }
 }
