@@ -7,10 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 //componentes
 import { AppComponent } from './app.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
+import {ImpuestosComponent} from './componentes/impuestos/impuestos.component';
 
 //servicios
 import {UsuarioService} from './servicios/usuario.service';
-import { ImpuestosComponent } from './componentes/impuestos/impuestos.component'
+import {RowsService} from './servicios/rows.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ImpuestosComponent } from './componentes/impuestos/impuestos.component'
     FormsModule
   ],
   providers: [
-    UsuarioService
+    UsuarioService,
+    RowsService
   ],
   bootstrap: [AppComponent]
 })

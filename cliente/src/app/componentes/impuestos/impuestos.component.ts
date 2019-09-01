@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {datos} from '../../modelos/Datos';
+import {datos} from '../../modelos/Datos'
 import {RowsService} from '../../servicios/rows.service'
 
 @Component({
