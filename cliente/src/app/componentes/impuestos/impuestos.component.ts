@@ -14,7 +14,7 @@ export class ImpuestosComponent implements OnInit {
               private usuarioServicio:UsuarioService ) { }
 
   public Datos1:datos={
-    Usuario:null,
+    Usuario:1,
     Ano:null,
     Mes:"Enero",
     sueldoImpo:null,
@@ -22,18 +22,18 @@ export class ImpuestosComponent implements OnInit {
     HonorableImp:null,
     HonorableRete:null
   }
-  aux2:any;
-  aux1:any;
-  aux12:any;
-  aux11:any;
-  aux10:any;
-  aux9:any;
-  aux8:any;
-  aux7:any;
-  aux6:any;
-  aux5:any;
-  aux4:any;
-  aux3:any;
+    aux1=false;
+    aux2=false;
+    aux3=false;
+    aux4=false;
+    aux5=false;
+    aux6=false;
+    aux7=false;
+    aux8=false;
+    aux9=false;
+    aux10=false;
+    aux11=false;
+    aux12=false;
   public Datos2:datos={
     Usuario:null,
     Ano:null,
@@ -136,18 +136,6 @@ export class ImpuestosComponent implements OnInit {
   public usserLogged: Usuario= this.usuarioServicio.getUserLoggedIn();
   public DataUser : any ;
   ngOnInit() {
-    this.aux1=false;
-    this.aux2=false;
-    this.aux3=false;
-    this.aux4=false;
-    this.aux5=false;
-    this.aux6=false;
-    this.aux7=false;
-    this.aux8=false;
-    this.aux9=false;
-    this.aux10=false;
-    this.aux11=false;
-    this.aux12=false;
     this.ImpuestosServicio.getRows(this.usserLogged.id).subscribe(
       res => {
         this.DataUser=res;
@@ -167,6 +155,7 @@ export class ImpuestosComponent implements OnInit {
     )
     }
     guardar2() {
+      this.Datos2.Usuario=this.usserLogged.id;
       this.aux2=true;
       this.ImpuestosServicio.GuardarDatos(this.Datos2).subscribe(
         res => {
@@ -266,7 +255,6 @@ export class ImpuestosComponent implements OnInit {
                           )
                           }
   Limpiar1(){
-    this.Datos1.Ano=null,
     this.Datos1.sueldoImpo=0;
     this.Datos1.sueldoRete=0;
     this.Datos1.HonorableImp=0; 
@@ -274,14 +262,12 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar2(){
-    this.Datos2.Ano=null,
     this.Datos2.sueldoImpo=0;
     this.Datos2.sueldoRete=0;
     this.Datos2.HonorableImp=0;
     this.Datos2.HonorableRete=0;
   }
   Limpiar3(){
-    this.Datos3.Ano=null,
     this.Datos3.sueldoImpo=0;
     this.Datos3.sueldoRete=0;
     this.Datos3.HonorableImp=0;
@@ -289,7 +275,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar4(){
-    this.Datos4.Ano=null,
     this.Datos4.sueldoImpo=0;
     this.Datos4.sueldoRete=0;
     this.Datos4.HonorableImp=0;
@@ -297,7 +282,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar5(){
-    this.Datos5.Ano=null,
     this.Datos5.sueldoImpo=0;
     this.Datos5.sueldoRete=0;
     this.Datos5.HonorableImp=0;
@@ -305,7 +289,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar6(){
-    this.Datos6.Ano=null,
     this.Datos6.sueldoImpo=0;
     this.Datos6.sueldoRete=0;
     this.Datos6.HonorableImp=0;
@@ -313,7 +296,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar7(){
-    this.Datos7.Ano=null,
     this.Datos7.sueldoImpo=0;
     this.Datos7.sueldoRete=0;
     this.Datos7.HonorableImp=0;
@@ -321,7 +303,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar8(){
-    this.Datos8.Ano=null,
     this.Datos8.sueldoImpo=0;
     this.Datos8.sueldoRete=0;
     this.Datos8.HonorableImp=0;
@@ -329,7 +310,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar9(){
-    this.Datos9.Ano=null,
     this.Datos9.sueldoImpo=0;
     this.Datos9.sueldoRete=0;
     this.Datos9.HonorableImp=0;
@@ -337,7 +317,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar10(){
-    this.Datos10.Ano=null,
     this.Datos10.sueldoImpo=0;
     this.Datos10.sueldoRete=0;
     this.Datos10.HonorableImp=0;
@@ -345,7 +324,6 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar11(){
-    this.Datos11.Ano=null,
     this.Datos11.sueldoImpo=0;
     this.Datos11.sueldoRete=0;
     this.Datos11.HonorableImp=0;
@@ -353,12 +331,106 @@ export class ImpuestosComponent implements OnInit {
 
   }
   Limpiar12(){
-    this.Datos12.Ano=null,
     this.Datos12.sueldoImpo=0;
     this.Datos12.sueldoRete=0;
     this.Datos12.HonorableImp=0;
     this.Datos12.HonorableRete=0;
 
   }
-  
+  Change1(){
+    this.ImpuestosServicio.CambiarRow(this.Datos1).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
+  Change2(){
+    this.ImpuestosServicio.CambiarRow(this.Datos2).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
+  Change3(){
+    this.ImpuestosServicio.CambiarRow(this.Datos3).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
+  Change4(){
+    this.ImpuestosServicio.CambiarRow(this.Datos4).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
+  Change5(){
+    this.ImpuestosServicio.CambiarRow(this.Datos5).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
+  Change6(){
+    this.ImpuestosServicio.CambiarRow(this.Datos6).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
+  Change7(){
+    this.ImpuestosServicio.CambiarRow(this.Datos7).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
+  Change8(){
+    this.ImpuestosServicio.CambiarRow(this.Datos8).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
+  Change9(){
+    this.ImpuestosServicio.CambiarRow(this.Datos9).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
+  Change10(){
+    this.ImpuestosServicio.CambiarRow(this.Datos10).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
+  Change11(){
+    this.ImpuestosServicio.CambiarRow(this.Datos11).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
+  Change12(){
+    this.ImpuestosServicio.CambiarRow(this.Datos12).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
 }
