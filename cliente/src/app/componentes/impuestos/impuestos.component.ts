@@ -24,6 +24,7 @@ sueldoRete:0,
 HonorableImp:0,
 HonorableRete:0
 }
+aparece=false;
 aux1=false;
 aux2=false;
 aux3=false;
