@@ -19,7 +19,7 @@ router.get('/rows/:id',(req,res) =>{
 //guardar filas 
 router.post('/rows/save',(req,res) => {
     const {Usuario,Ano,Mes,sueldoImpo,sueldoRete,HonorableImp,HonorableRete}=req.body;
-    const query=`insert into rowsusuario(usuario,years,mes,sueldoImponible,impSueldoRetenido,Honorarios,impHonorariosRetenido) value(?,?,?,?,?,?,?)`;
+    const query=`insert into rowsusuario(usuario,years,Mes,sueldoImponible,impSueldoRetenido,Honorarios,impHonorariosRetenido) value(?,?,?,?,?,?,?)`;
     mysqlConnection.query(query,[Usuario,Ano,Mes,sueldoImpo,sueldoRete,HonorableImp,HonorableRete],(err,rows,fields) =>{
     if(!err){
         res.json({Status: 'Registro con exito!'});
@@ -29,10 +29,10 @@ router.post('/rows/save',(req,res) => {
     });
 });
 router.put('/Row/cambiar',(req,res) =>{
-    const {Mes,sueldoImpo,sueldoRete,HonorableImp,HonorableRete,Usuario,Ano}=req.body;
-    const query=`update rowsusuario set mes=?,sueldoImponible=?,impSueldoRetenido=?,Honorarios=?,impHonorariosRetenido=? where usuario=? and years=? `;
+    const {sueldoImpo,sueldoRete,HonorableImp,HonorableRete,Usuario,Ano,Mes}=req.body;
+    const query=`update rowsusuario set sueldoImponible=?,impSueldoRetenido=?,Honorarios=?,impHonorariosRetenido=? where usuario=? and years=? and Mes=? `;
     
-    mysqlConnection.query(query,[Mes,sueldoImpo,sueldoRete,HonorableImp,HonorableRete,Usuario,Ano],(err,rows,fields) =>{
+    mysqlConnection.query(query,[sueldoImpo,sueldoRete,HonorableImp,HonorableRete,Usuario,Ano,Mes],(err,rows,fields) =>{
     if(!err){
         res.json({Status: 'Diagnostico cambiado!'});//entrega cada fila de la consulta
     }else{

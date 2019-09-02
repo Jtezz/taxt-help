@@ -15,7 +15,6 @@ export class ImpuestosComponent implements OnInit {
 private usuarioServicio:UsuarioService ) { }
 public usserLogged: Usuario=this.usuarioServicio.getUser();
 public DataUser :any=[];
-public temp:boolean=false;
 public Datos1:datos={
 Usuario:this.usserLogged.id,
 Ano:2019,
@@ -137,18 +136,18 @@ HonorableImp:0,
 HonorableRete:0
 }
 public data : datos[]=[
-{Usuario:null,Ano:2019,Mes:"Enero",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
-{Usuario:null,Ano:2019,Mes:"Febrero",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
-{Usuario:null,Ano:2019,Mes:"Marzo",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
-{Usuario:null,Ano:2019,Mes:"Abril",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
-{Usuario:null,Ano:2019,Mes:"Mayo",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
-{Usuario:null,Ano:2019,Mes:"Junio",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
-{Usuario:null,Ano:2019,Mes:"Julio",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
-{Usuario:null,Ano:2019,Mes:"Agosto",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
-{Usuario:null,Ano:2019,Mes:"Septiembre",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
-{Usuario:null,Ano:2019,Mes:"Octubre",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
-{Usuario:null,Ano:2019,Mes:"Noviembre",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
-{Usuario:null,Ano:2019,Mes:"Diciembre",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null}
+{Usuario:this.usserLogged.id,Ano:2019,Mes:"Enero",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
+{Usuario:this.usserLogged.id,Ano:2019,Mes:"Febrero",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
+{Usuario:this.usserLogged.id,Ano:2019,Mes:"Marzo",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
+{Usuario:this.usserLogged.id,Ano:2019,Mes:"Abril",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
+{Usuario:this.usserLogged.id,Ano:2019,Mes:"Mayo",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
+{Usuario:this.usserLogged.id,Ano:2019,Mes:"Junio",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
+{Usuario:this.usserLogged.id,Ano:2019,Mes:"Julio",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
+{Usuario:this.usserLogged.id,Ano:2019,Mes:"Agosto",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
+{Usuario:this.usserLogged.id,Ano:2019,Mes:"Septiembre",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
+{Usuario:this.usserLogged.id,Ano:2019,Mes:"Octubre",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
+{Usuario:this.usserLogged.id,Ano:2019,Mes:"Noviembre",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
+{Usuario:this.usserLogged.id,Ano:2019,Mes:"Diciembre",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null}
 ];
 ngOnInit() {
 //trae de la bd la informacion anterior del usuario
@@ -158,6 +157,7 @@ this.DataUser=data;
 },
 err =>console.error(err)
 );
+
 }
 
 aux(){
@@ -175,6 +175,7 @@ aux(){
       this.data[j]=temp;
     }
   }
+  console.log(this.data);
 
 }
 this.Datos1=this.data[0];
