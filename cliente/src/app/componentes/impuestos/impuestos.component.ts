@@ -12,12 +12,10 @@ import { Data } from '@angular/router';
 export class ImpuestosComponent implements OnInit {
 
   constructor(private ImpuestosServicio: RowsService ,
-              private usuarioServicio:UsuarioService ) { }
-
+private usuarioServicio:UsuarioService ) { }
 public usserLogged: Usuario=this.usuarioServicio.getUser();
 public DataUser :any=[];
 public temp:boolean=false;
-
 public Datos1:datos={
 Usuario:this.usserLogged.id,
 Ano:2019,
@@ -308,7 +306,6 @@ aux.sueldoImpo=0;
 aux.sueldoRete=0;
 aux.HonorableImp=0; 
 aux.HonorableRete=0;
-
 }
 Change(aux:datos){
 this.ImpuestosServicio.CambiarRow(aux).subscribe(

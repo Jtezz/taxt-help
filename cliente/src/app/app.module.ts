@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';//trabajar con formularios en angular
 import { AppRoutingModule } from './app-routing.module';
 //componentes
 import { AppComponent } from './app.component';
-import { UsuarioComponent } from './componentes/usuario/usuario.component';
+import { UsuarioComponent } from './componentes/usuario/usuario.componenet';
 import {ImpuestosComponent} from './componentes/impuestos/impuestos.component';
 
 //servicios
