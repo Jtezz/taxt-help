@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UsuarioComponent } from './usuario.component';
+import { UsuarioComponent } from './usuario.componenet';
 
 describe('UsuarioComponent', () => {
   let component: UsuarioComponent;
@@ -12,7 +12,6 @@ describe('UsuarioComponent', () => {
     })
     .compileComponents();
   }));
-
   beforeEach(() => {
     fixture = TestBed.createComponent(UsuarioComponent);
     component = fixture.componentInstance;

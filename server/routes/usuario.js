@@ -13,6 +13,17 @@ router.post('/login',(req,res) =>{ //eliminar una consulta
     }
     });
 });
+router.get('/login/:rut',(req,res) =>{ //eliminar una consulta
+    const {rut}=req.param;
+    const query=`select * from usuario where rut=?`;
+    mysqlConnection.query(query,[rut],(err,rows,fields) =>{
+    if(!err){
+        res.json(rows);
+    }else{
+        console.log(err);
+    }
+    });
+});
 
 //registro de usuario
 router.post('/register',(req,res) => {

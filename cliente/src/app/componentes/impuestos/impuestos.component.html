@@ -1,9 +1,11 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<a class='btn btn-info btn-xs' (click)="aux()">Aux</a>
 <div class="container">
     <div class="row col-md-10 col-md-offset-1 custyle">
     <table class="table table-striped custab">
+  <p></p>
 <table>
     <thead>
     <tr>
@@ -126,7 +128,7 @@
     <td class="text-center"><a *ngIf="aux12==false" class='btn btn-info btn-xs' (click)="guardar(Datos12)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos12)"> Limpiar</a><a *ngIf="aux12==true" class="btn btn-danger btn-xs" (click)="Change(Datos12)"> Cambiar</a></td>
 </tr>
 </tbody>
- </table>
+</table>
 
 
     
