@@ -50,6 +50,6 @@ export class UsuarioComponent implements OnInit {
       err=>console.log(err)
     )
   }
-  
+
 
 }

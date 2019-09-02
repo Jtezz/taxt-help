@@ -14,13 +14,13 @@ export class ImpuestosComponent implements OnInit {
               private usuarioServicio:UsuarioService ) { }
 
   public Datos1:datos={
-    Usuario:1,
-    Ano:null,
+    Usuario:null,
+    Ano:2019,
     Mes:"Enero",
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
     aux1=false;
     aux2=false;
@@ -36,102 +36,102 @@ export class ImpuestosComponent implements OnInit {
     aux12=false;
   public Datos2:datos={
     Usuario:null,
-    Ano:null,
+    Ano:2019,
     Mes:"Febrero",
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos3:datos={
     Usuario:null,
-    Ano:null,
+    Ano:2019,
     Mes:"Marzo",
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos4:datos={
     Usuario:null,
-    Ano:null,
+    Ano:2019,
     Mes:"Abril",
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos5:datos={
     Usuario:null,
-    Ano:null,
+    Ano:2019,
     Mes:"Mayo",
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos6:datos={
     Usuario:null,
-    Ano:null,
+    Ano:2019,
     Mes:"Junio",
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos7:datos={
     Usuario:null,
-    Ano:null,
+    Ano:2019,
     Mes:"Julio",
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos8:datos={
     Usuario:null,
-    Ano:null,
+    Ano:2019,
     Mes:"Agosto",
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos9:datos={
     Usuario:null,
-    Ano:null,
+    Ano:2019,
     Mes:"Septiembre",
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos10:datos={
     Usuario:null,
-    Ano:null,
+    Ano:2019,
     Mes:"Octubre",
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos11:datos={
     Usuario:null,
-    Ano:null,
+    Ano:2019,
     Mes:"Noviembre",
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos12:datos={
     Usuario:null,
-    Ano:null,
+    Ano:2019,
     Mes:"Diciembre",
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public usserLogged: Usuario= this.usuarioServicio.getUserLoggedIn();
   public DataUser : any ;
