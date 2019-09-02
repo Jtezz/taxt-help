@@ -136,7 +136,7 @@ sueldoRete:0,
 HonorableImp:0,
 HonorableRete:0
 }
-public data : datos[]=[
+public data : datos[]=[//guarda los datos que se mostraran en pantalla
 {Usuario:this.usserLogged.id,Ano:2019,Mes:"Enero",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
 {Usuario:this.usserLogged.id,Ano:2019,Mes:"Febrero",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
 {Usuario:this.usserLogged.id,Ano:2019,Mes:"Marzo",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
@@ -150,6 +150,9 @@ public data : datos[]=[
 {Usuario:this.usserLogged.id,Ano:2019,Mes:"Noviembre",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
 {Usuario:this.usserLogged.id,Ano:2019,Mes:"Diciembre",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null}
 ];
+public TablaImpuesto:any;
+
+
 ngOnInit() {
 //trae de la bd la informacion anterior del usuario
 this.ImpuestosServicio.getRows(this.usserLogged.id).subscribe(
@@ -158,10 +161,69 @@ this.DataUser=data;
 },
 err =>console.error(err)
 );
-
+//trae de la bd la tabla de impuestos para este año 
+this.ImpuestosServicio.getTablaImpu().subscribe(
+  data=>{
+    this.TablaImpuesto=data;
+  },
+  err =>console.error(err)
+);
 }
 
+
+Calculao_UltimaRow(){
+  var temp:any;
+  var TsueldoImpo:number=0;
+  var TsueldoRete:number=0;
+  var ThonoImpo:number=0;
+  var ThonoRete:number=0;
+  var porcentaje:number=0;
+  var descuento:number=0;
+  var aux:any=this.data;
+  var Total:number=0;
+  // obtener cotizacion de ultimo mes
+  for(let i in this.data){
+    if(this.data[i].sueldoImpo != null ){
+      temp=this.data[i];
+    }
+  }  
+  //rellenar los datos para el culculo final
+  for (let i in this.data){
+    if(aux[i].sueldoImpo == null){ 
+      var temp2:datos={
+        Usuario:aux[i].Usuario,
+        Ano:aux[i].Ano,
+        Mes:aux[i].Mes,
+        sueldoImpo:temp.sueldoImpo,
+        sueldoRete:temp.sueldoRete,
+        HonorableImp:temp.HonorableImp,
+        HonorableRete:temp.HonorableRete
+      }
+      //cambiamos todas las variables menos el mes , para no peder esta informacion
+      aux[i]=temp2;
+    }
+    TsueldoImpo=TsueldoImpo+aux[i].sueldoImpo;
+    TsueldoRete=TsueldoRete+aux[i].sueldoRete;
+    ThonoImpo=ThonoImpo+aux[i].HonorableImp;
+    ThonoRete=ThonoRete+aux[i].HonorableRete;
+  }
+  console.log(TsueldoImpo)
+  console.log(TsueldoRete)
+  console.log(ThonoImpo)
+  console.log(ThonoRete)
+
+  for (let i in this.TablaImpuesto){
+    if(this.TablaImpuesto[i].rango1<(TsueldoImpo + (ThonoRete*0.7)) && this.TablaImpuesto[i].rango2>(TsueldoImpo+(ThonoRete*0.7))){
+      porcentaje=this.TablaImpuesto[i].factor;
+      descuento=this.TablaImpuesto[i].rebajar;
+    }    
+  }
+  Total=((TsueldoImpo + (ThonoRete*0.7))*porcentaje)-(TsueldoRete+ThonoRete+descuento);
+  console.log(Total)
+  
+}
 aux(){
+  console.log(this.TablaImpuesto)
   for (let i in this.DataUser){
     for(let j in this.data){
       if (this.data[j].Mes === this.DataUser[i].Mes){// si  se encunentra un mes en los datos del usuaroi los guarda en DataViews
@@ -210,13 +272,12 @@ aux(){
         }
         else{
           this.aux12=true;
+          }
         }
       }
     }
-  }
-  console.log(this.data);
 
-}
+  }
 this.Datos1=this.data[0];
 this.Datos2=this.data[1];
 this.Datos3=this.data[2];
