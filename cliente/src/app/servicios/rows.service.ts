@@ -15,4 +15,7 @@ GuardarDatos(HM:datos){
 getRows(id:number){//buscar paciente por rut
   return this.http.get(`${this.API_URI}/rows/${id}`);//son backtick de jav `` alt+parentecis
 }
+CambiarRow(aux:datos){
+  return this.http.put(`${this.API_URI}/Row/cambiar`,aux);
+}
 }

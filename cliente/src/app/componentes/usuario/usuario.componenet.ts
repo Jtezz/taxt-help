@@ -37,5 +37,4 @@ export class UsuarioComponent implements OnInit {
       error=> console.log(error)
       )
   }
-  
 }
