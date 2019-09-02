@@ -172,6 +172,7 @@ this.ImpuestosServicio.getTablaImpu().subscribe(
 
 
 Calculao_UltimaRow(){
+  this.aparece=true;
   var temp:any;
   var TsueldoImpo:number=0;
   var TsueldoRete:number=0;
