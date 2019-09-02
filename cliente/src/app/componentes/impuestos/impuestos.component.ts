@@ -12,107 +12,131 @@ import { Data } from '@angular/router';
 export class ImpuestosComponent implements OnInit {
 
   constructor(private ImpuestosServicio: RowsService ,
-              private usuarioServicio:UsuarioService ) { }
+private usuarioServicio:UsuarioService ) { }
+public usserLogged: Usuario=this.usuarioServicio.getUser();
+public DataUser :any=[];
+public temp:boolean=false;
 
   public Datos1:datos={
-    Usuario:null,
-    Mes:null,
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    Usuario:this.usserLogged.id,
+    Ano:2019,
+    Mes:"Enero",
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
+    aux1=false;
+    aux2=false;
+    aux3=false;
+    aux4=false;
+    aux5=false;
+    aux6=false;
+    aux7=false;
+    aux8=false;
+    aux9=false;
+    aux10=false;
+    aux11=false;
+    aux12=false;
   public Datos2:datos={
-    Usuario:null,
-    Mes:null,
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    Usuario:this.usserLogged.id,
+    Ano:2019,
+    Mes:"Febrero",
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos3:datos={
-    Usuario:null,
-    Mes:null,
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    Usuario:this.usserLogged.id,
+    Ano:2019,
+    Mes:"Marzo",
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos4:datos={
-    Usuario:null,
-    Mes:null,
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    Usuario:this.usserLogged.id,
+    Ano:2019,
+    Mes:"Abril",
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos5:datos={
-    Usuario:null,
-    Mes:null,
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    Usuario:this.usserLogged.id,
+    Ano:2019,
+    Mes:"Mayo",
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos6:datos={
-    Usuario:null,
-    Mes:null,
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    Usuario:this.usserLogged.id,
+    Ano:2019,
+    Mes:"Junio",
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos7:datos={
-    Usuario:null,
-    Mes:null,
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    Usuario:this.usserLogged.id,
+    Ano:2019,
+    Mes:"Julio",
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos8:datos={
-    Usuario:null,
-    Mes:null,
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    Usuario:this.usserLogged.id,
+    Ano:2019,
+    Mes:"Agosto",
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos9:datos={
-    Usuario:null,
-    Mes:null,
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    Usuario:this.usserLogged.id,
+    Ano:2019,
+    Mes:"Septiembre",
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos10:datos={
-    Usuario:null,
-    Mes:null,
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    Usuario:this.usserLogged.id,
+    Ano:2019,
+    Mes:"Octubre",
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos11:datos={
-    Usuario:null,
-    Mes:null,
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    Usuario:this.usserLogged.id,
+    Ano:2019,
+    Mes:"Noviembre",
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
   public Datos12:datos={
-    Usuario:null,
-    Mes:null,
-    sueldoImpo:null,
-    sueldoRete:null,
-    HonorableImp:null,
-    HonorableRete:null
+    Usuario:this.usserLogged.id,
+    Ano:2019,
+    Mes:"Diciembre",
+    sueldoImpo:0,
+    sueldoRete:0,
+    HonorableImp:0,
+    HonorableRete:0
   }
-  public usserLogged: Usuario=this.usuarioServicio.getUser();
-  public DataUser :any=[];
-  public temp:boolean=false;
   public data : datos[]=[
     {Usuario:null,Mes:"Enero",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
     {Usuario:null,Mes:"Febrero",sueldoImpo:null,sueldoRete:null,HonorableImp:null,HonorableRete:null},
@@ -167,184 +191,130 @@ aux(){
   this.Datos11=this.data[10];
   this.Datos12=this.data[11];
 }
-  guardar1() {
-    this.ImpuestosServicio.GuardarDatos(this.Datos1).subscribe(
+  
+  guardar(aux:datos) {
+    if (aux.Mes=="Enero"){
+    this.aux1=true;
+    this.ImpuestosServicio.GuardarDatos(aux).subscribe(
       res => {
         console.log(res);
       },
       err => console.log(err)
     )
     }
-    guardar2() {
-      this.ImpuestosServicio.GuardarDatos(this.Datos2).subscribe(
-        res => {
-          console.log(res);
-        },
-        err => console.log(err)
-      )
-      }
-      guardar3() {
-        this.ImpuestosServicio.GuardarDatos(this.Datos3).subscribe(
-          res => {
-            console.log(res);
-          },
-          err => console.log(err)
-        )
-        }
-        guardar4() {
-          this.ImpuestosServicio.GuardarDatos(this.Datos4).subscribe(
-            res => {
-              console.log(res);
-            },
-            err => console.log(err)
-          )
-          }
-          guardar5() {
-            this.ImpuestosServicio.GuardarDatos(this.Datos5).subscribe(
-              res => {
-                console.log(res);
-              },
-              err => console.log(err)
-            )
-            }
-            guardar6() {
-              this.ImpuestosServicio.GuardarDatos(this.Datos6).subscribe(
-                res => {
-                  console.log(res);
-                },
-                err => console.log(err)
-              )
-              }
-              guardar7() {
-                this.ImpuestosServicio.GuardarDatos(this.Datos7).subscribe(
-                  res => {
-                    console.log(res);
-                  },
-                  err => console.log(err)
-                )
-                }
-                guardar8() {
-                  this.ImpuestosServicio.GuardarDatos(this.Datos8).subscribe(
-                    res => {
-                      console.log(res);
-                    },
-                    err => console.log(err)
-                  )
-                  }
-                  guardar9() {
-                    this.ImpuestosServicio.GuardarDatos(this.Datos9).subscribe(
-                      res => {
-                        console.log(res);
-                      },
-                      err => console.log(err)
-                    )
-                    }
-                    guardar10() {
-                      this.ImpuestosServicio.GuardarDatos(this.Datos10).subscribe(
-                        res => {
-                          console.log(res);
-                        },
-                        err => console.log(err)
-                      )
-                      }
-                      guardar11() {
-                        this.ImpuestosServicio.GuardarDatos(this.Datos11).subscribe(
-                          res => {
-                            console.log(res);
-                          },
-                          err => console.log(err)
-                        )
-                        }
-                        guardar12() {
-                          this.ImpuestosServicio.GuardarDatos(this.Datos12).subscribe(
-                            res => {
-                              console.log(res);
-                            },
-                            err => console.log(err)
-                          )
-                          }
-  Limpiar1(){
-    this.Datos1.sueldoImpo=0;
-    this.Datos1.sueldoRete=0;
-    this.Datos1.HonorableImp=0; 
-    this.Datos1.HonorableRete=0;
+    else if (aux.Mes=="Febrero"){
+      this.aux2=true;
+    this.ImpuestosServicio.GuardarDatos(aux).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+    }
+    else if (aux.Mes=="Marzo"){
+      this.aux3=true;
+    this.ImpuestosServicio.GuardarDatos(aux).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+    }
+    else if (aux.Mes=="Abril"){
+      this.aux4=true;
+    this.ImpuestosServicio.GuardarDatos(aux).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+    }
+    else if (aux.Mes=="Mayo"){
+      this.aux5=true;
+    this.ImpuestosServicio.GuardarDatos(aux).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+    }
+    else if (aux.Mes=="Junio"){
+      this.aux6=true;
+    this.ImpuestosServicio.GuardarDatos(aux).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+    }
+    else if (aux.Mes=="Julio"){
+      this.aux7=true;
+    this.ImpuestosServicio.GuardarDatos(aux).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+    }
+    else if (aux.Mes=="Agosto"){
+      this.aux8=true;
+    this.ImpuestosServicio.GuardarDatos(aux).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+    }
+    else if (aux.Mes=="Septiembre"){
+      this.aux9=true;
+    this.ImpuestosServicio.GuardarDatos(aux).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+    }
+    else if (aux.Mes=="Octubre"){
+      this.aux10=true;
+    this.ImpuestosServicio.GuardarDatos(aux).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+    }
+    else if (aux.Mes=="Noviembre"){
+      this.aux11=true;
+    this.ImpuestosServicio.GuardarDatos(aux).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+    }
+    else{
+      this.aux12=true;
+    this.ImpuestosServicio.GuardarDatos(aux).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+    }
+    }
+  Limpiar(aux:datos){
+    aux.sueldoImpo=0;
+    aux.sueldoRete=0;
+    aux.HonorableImp=0; 
+    aux.HonorableRete=0;
 
   }
-  Limpiar2(){
-    this.Datos2.sueldoImpo=0;
-    this.Datos2.sueldoRete=0;
-    this.Datos2.HonorableImp=0;
-    this.Datos2.HonorableRete=0;
+  Change(aux:datos){
+    this.ImpuestosServicio.CambiarRow(aux).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
   }
-  Limpiar3(){
-    this.Datos3.sueldoImpo=0;
-    this.Datos3.sueldoRete=0;
-    this.Datos3.HonorableImp=0;
-    this.Datos3.HonorableRete=0;
-
-  }
-  Limpiar4(){
-    this.Datos4.sueldoImpo=0;
-    this.Datos4.sueldoRete=0;
-    this.Datos4.HonorableImp=0;
-    this.Datos4.HonorableRete=0;
-
-  }
-  Limpiar5(){
-    this.Datos5.sueldoImpo=0;
-    this.Datos5.sueldoRete=0;
-    this.Datos5.HonorableImp=0;
-    this.Datos5.HonorableRete=0;
-
-  }
-  Limpiar6(){
-    this.Datos6.sueldoImpo=0;
-    this.Datos6.sueldoRete=0;
-    this.Datos6.HonorableImp=0;
-    this.Datos6.HonorableRete=0;
-
-  }
-  Limpiar7(){
-    this.Datos7.sueldoImpo=0;
-    this.Datos7.sueldoRete=0;
-    this.Datos7.HonorableImp=0;
-    this.Datos7.HonorableRete=0;
-
-  }
-  Limpiar8(){
-    this.Datos8.sueldoImpo=0;
-    this.Datos8.sueldoRete=0;
-    this.Datos8.HonorableImp=0;
-    this.Datos8.HonorableRete=0;
-
-  }
-  Limpiar9(){
-    this.Datos9.sueldoImpo=0;
-    this.Datos9.sueldoRete=0;
-    this.Datos9.HonorableImp=0;
-    this.Datos9.HonorableRete=0;
-
-  }
-  Limpiar10(){
-    this.Datos10.sueldoImpo=0;
-    this.Datos10.sueldoRete=0;
-    this.Datos10.HonorableImp=0;
-    this.Datos10.HonorableRete=0;
-
-  }
-  Limpiar11(){
-    this.Datos11.sueldoImpo=0;
-    this.Datos11.sueldoRete=0;
-    this.Datos11.HonorableImp=0;
-    this.Datos11.HonorableRete=0;
-
-  }
-  Limpiar12(){
-    this.Datos12.sueldoImpo=0;
-    this.Datos12.sueldoRete=0;
-    this.Datos12.HonorableImp=0;
-    this.Datos12.HonorableRete=0;
-
-  }
-  
 }
