@@ -18,4 +18,8 @@ getRows(id:number){//buscar paciente por rut
 CambiarRow(aux:datos){
   return this.http.put(`${this.API_URI}/Row/cambiar`,aux);
 }
+//Traer tabla de impuestos
+getTablaImpu(){
+   return this.http.get(`${this.API_URI}/TablaImpuesto`);
+}
 }
