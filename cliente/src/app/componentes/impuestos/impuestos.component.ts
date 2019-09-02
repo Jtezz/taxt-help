@@ -173,6 +173,44 @@ aux(){
       HonorableImp:this.DataUser[i].Honorarios,
       HonorableRete:this.DataUser[i].impHonorariosRetenido};
       this.data[j]=temp;
+      if (this.data[j].sueldoImpo != null){
+        if(this.data[j].Mes=="Enero" ){
+          this.aux1=true;
+        }
+        else if(this.data[j].Mes=="Febrero"){
+          this.aux2=true;
+        }
+        else if(this.data[j].Mes=="Marzo"){
+          this.aux3=true;
+        }
+        else if(this.data[j].Mes=="Abril"){
+          this.aux4=true;
+        }
+        else if(this.data[j].Mes=="Mayo"){
+          this.aux5=true;
+        }
+        else if(this.data[j].Mes=="Junio"){
+          this.aux6=true;
+        }
+        else if(this.data[j].Mes=="Julio"){
+          this.aux7=true;
+        }
+        else if(this.data[j].Mes=="Agosto"){
+          this.aux8=true;
+        }
+        else if(this.data[j].Mes=="Septiembre"){
+          this.aux9=true;
+        }
+        else if(this.data[j].Mes=="Octubre"){
+          this.aux10=true;
+        }
+        else if(this.data[j].Mes=="Noviembre"){
+          this.aux11=true;
+        }
+        else{
+          this.aux12=true;
+        }
+      }
     }
   }
   console.log(this.data);
