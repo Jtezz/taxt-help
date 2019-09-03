@@ -4,6 +4,7 @@ import {RowsService} from '../../servicios/rows.service'
 import {UsuarioService} from '../../servicios/usuario.service'
 import {Usuario} from '../../modelos/usuario'
 import { Data } from '@angular/router';
+import { homedir } from 'os';
 @Component({
   selector: 'app-impuestos',
   templateUrl: './impuestos.component.html',
@@ -55,6 +56,7 @@ sueldoRete:0,
 HonorableImp:0,
 HonorableRete:0
 }
+public respuesta:number;
 public Datos4:datos={
 Usuario:this.usserLogged.id,
 Ano:2019,
@@ -200,6 +202,8 @@ Calculo_Promedio(){
 }
 
 Calculo_UltimaRow(){
+  this.aux();
+  this.aparece=true;
   var temp:any;
   var TsueldoImpo:number=0;
   var TsueldoRete:number=0;
@@ -243,14 +247,13 @@ Calculo_UltimaRow(){
   console.log(ThonoRete)
 
   for (let i in this.TablaImpuesto){
-    if(this.TablaImpuesto[i].rango1<(TsueldoImpo + (ThonoRete*0.7)) && this.TablaImpuesto[i].rango2>(TsueldoImpo+(ThonoRete*0.7))){
+    if(this.TablaImpuesto[i].rango1<(TsueldoImpo + (ThonoImpo*0.7)) && this.TablaImpuesto[i].rango2>(TsueldoImpo+(ThonoImpo*0.7))){
       porcentaje=this.TablaImpuesto[i].factor;
       descuento=this.TablaImpuesto[i].rebajar;
     }    
   }
-  Total=((TsueldoImpo + (ThonoRete*0.7))*porcentaje)-(TsueldoRete+ThonoRete+descuento);
-  console.log(Total)
-  
+  this.respuesta=((TsueldoImpo + (ThonoImpo*0.7))*porcentaje)-(TsueldoRete+ThonoRete+descuento);
+  this.aux();
 }
 aux(){
   console.log(this.TablaImpuesto)
@@ -445,5 +448,18 @@ console.log(res);
 },
 err => console.log(err)
 )
+}
+Calcular(){
+  var Hono:number=this.Datos1.HonorableImp+this.Datos2.HonorableImp+this.Datos3.HonorableImp+this.Datos4.HonorableImp+this.Datos5.HonorableImp+this.Datos6.HonorableImp+this.Datos7.HonorableImp+this.Datos8.HonorableImp+this.Datos9.HonorableImp+this.Datos10.HonorableImp+this.Datos11.HonorableImp+this.Datos12.HonorableImp;
+  var suel:number=this.Datos1.sueldoImpo+this.Datos2.sueldoImpo+this.Datos3.sueldoImpo+this.Datos4.sueldoImpo+this.Datos5.sueldoImpo+this.Datos6.sueldoImpo+this.Datos7.sueldoImpo+this.Datos8.sueldoImpo+this.Datos9.sueldoImpo+this.Datos10.sueldoImpo+this.Datos11.sueldoImpo+this.Datos12.sueldoImpo;
+  var suelRet:number=this.Datos1.sueldoRete+this.Datos2.sueldoRete+this.Datos3.sueldoRete+this.Datos4.sueldoRete+this.Datos5.sueldoRete+this.Datos6.sueldoRete+this.Datos7.sueldoRete+this.Datos8.sueldoRete+this.Datos9.sueldoRete+this.Datos10.sueldoRete+this.Datos11.sueldoRete+this.Datos12.sueldoRete;
+  var HonoRet:number=this.Datos1.HonorableRete+this.Datos2.HonorableRete+this.Datos3.HonorableRete+this.Datos4.HonorableRete+this.Datos5.HonorableRete+this.Datos6.HonorableRete+this.Datos7.HonorableRete+this.Datos8.HonorableRete+this.Datos9.HonorableRete+this.Datos10.HonorableRete+this.Datos11.HonorableRete+this.Datos12.HonorableRete;
+  for (let i in this.TablaImpuesto){
+    if(this.TablaImpuesto[i].rango1<(suel + (Hono*0.7)) && this.TablaImpuesto[i].rango2>(suel+(Hono*0.7))){
+      var porcentaje=this.TablaImpuesto[i].factor;
+      var descuento=this.TablaImpuesto[i].rebajar;
+    }    
+  }
+  this.respuesta=(suel+(Hono*0.7))*porcentaje-(suelRet+HonoRet+descuento);
 }
 }
