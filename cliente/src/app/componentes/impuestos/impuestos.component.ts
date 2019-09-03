@@ -170,8 +170,36 @@ this.ImpuestosServicio.getTablaImpu().subscribe(
 );
 }
 
+Calculo_Promedio(){
+  var sum:number=0;//sumamos todos las utilidades (sueldo+honorarios)
+  var sum2:number=0;//sumamos todos las retenciones
+  var cont:number=0;//contador para saber cuantos datos tengo 
+  var total:number=0;
+  var promedio:number=0;
+  var promedio2:number=0;
+  var porcentaje:number=0;
+  var descuento:number=0;
 
-Calculao_UltimaRow(){
+  for (let i in this.data){
+    if (this.data[i].sueldoImpo != null){
+      sum=sum+(this.data[i].sueldoImpo+(this.data[i].HonorableImp*0.7));
+      sum2=sum2+(this.data[i].sueldoRete+this.data[i].HonorableRete);
+      cont=cont+1;
+    }
+  }
+  promedio=(sum/cont)*12;
+  promedio2=(sum2/cont)*12;
+  
+  for (let i in this.TablaImpuesto){
+    if(this.TablaImpuesto[i].rango1< promedio && this.TablaImpuesto[i].rango2>promedio){
+      porcentaje=this.TablaImpuesto[i].factor;
+      descuento=this.TablaImpuesto[i].rebajar;
+    }    
+  }
+  total=(promedio)*porcentaje - (promedio2+descuento);
+}
+
+Calculo_UltimaRow(){
   var temp:any;
   var TsueldoImpo:number=0;
   var TsueldoRete:number=0;
@@ -181,12 +209,14 @@ Calculao_UltimaRow(){
   var descuento:number=0;
   var aux:any=this.data;
   var Total:number=0;
+  console.log(this.data)
   // obtener cotizacion de ultimo mes
   for(let i in this.data){
     if(this.data[i].sueldoImpo != null ){
       temp=this.data[i];
     }
   }  
+  console.log(temp)
   //rellenar los datos para el culculo final
   for (let i in this.data){
     if(aux[i].sueldoImpo == null){ 
