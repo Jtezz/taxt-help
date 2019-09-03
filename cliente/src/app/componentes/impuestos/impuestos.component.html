@@ -1,139 +1,152 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<div *ngIf="aparece==false">
-    <button type="button" class="btn btn-primary btn-lg margin-right" (click)="Calculao_UltimaRow()">Repetir cotizacion</button>
-    <button type="button" class="btn btn-primary btn-lg margin-right" >Promedio</button>
-    <button type="button" class="btn btn-primary btn-lg margin-right" >Manual</button>
+<div class="page-header">
+    <h1 class="h1">Taxt Help <small>te ayudamos con tus impuesto!</small></h1>
+    
 </div>
-<div class="container" *ngIf="aparece==true">
-<a class='btn btn-info btn-xs' (click)="aux()">Clickeame:D!</a>
-<div class="container">
-    <div class="row col-md-10 col-md-offset-1 custyle">
-    <table class="table table-striped custab">
-<table *ngIf="aparece==true">
-    <thead>
+
+
+    <div class="lead" *ngIf="aparece==false">
+    <p>Hola {{usserLogged.nombre}}, gracias por preferirnos!!</p>
+        <button type="button" class="btn btn-primary btn-lg margin-right" (click)="aux()">Continuar</button>
+    </div>
+    <div class="container" *ngIf="aparece==true">
+    
+    <div class="container">
+        <div class="row col-md-10 col-md-offset-1 custyle">
+        <table class="table table-striped custab">
+    <table *ngIf="aparece==true">
+        <thead>
+        <tr>
+        <th>Año</th>
+        <th>Mes</th>
+        <th>Sueldo Imponible</th>
+        <th>Sueldo Retenido</th>
+        <th>Honorarios Brutos</th>
+        <th>Honorarios Retenidos</th>
+        <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
     <tr>
-    <th>Año</th>
-    <th>Mes</th>
-    <th>Sueldo Imponible</th>
-    <th>Sueldo Retenido</th>
-    <th>Honorarios Brutos</th>
-    <th>Honorarios Retenidos</th>
-    <th>Accion</th>
+        <td><input type="number" min=2019 max=3000 name="2019" [(ngModel)]="Datos1.Ano" placeholder="2019" class="form-control" autofocus></td>
+        <td>Enero</td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.sueldoImpo" placeholder="Datos1.sueldoImpo" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td class="text-center"><a *ngIf="aux1==false" class='btn btn-info btn-xs' (click)="guardar(Datos1)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos1)"> Limpiar</a><a *ngIf="aux1==true" class="btn btn-primary btn-xs" (click)="Change(Datos1)"> Actualizar</a></td>
     </tr>
-</thead>
-<tbody>
-<tr>
-    <td><input type="number" min=2019 max=3000 name="2019" [(ngModel)]="Datos1.Ano" placeholder="2019" class="form-control" autofocus></td>
-    <td>Enero</td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.sueldoImpo" placeholder="Datos1.sueldoImpo" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos1.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td class="text-center"><a *ngIf="aux1==false" class='btn btn-info btn-xs' (click)="guardar(Datos1)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos1)"> Limpiar</a><a *ngIf="aux1==true" class="btn btn-danger btn-xs" (click)="Change(Datos1)"> Cambiar</a></td>
-</tr>
-<tr>
-    <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos2.Ano" placeholder="2019" class="form-control" autofocus></td>
-    <td>Febrero</td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td class="text-center"><a *ngIf="aux2==false" class='btn btn-info btn-xs' (click)="guardar(Datos2)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos2)"> Limpiar</a><a *ngIf="aux2==true" class="btn btn-danger btn-xs" (click)="Change(Datos2)"> Cambiar</a></td>
+    <tr>
+        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos2.Ano" placeholder="2019" class="form-control" autofocus></td>
+        <td>Febrero</td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos2.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td class="text-center"><a *ngIf="aux2==false" class='btn btn-info btn-xs' (click)="guardar(Datos2)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos2)"> Limpiar</a><a *ngIf="aux2==true" class="btn btn-primary btn-xs" (click)="Change(Datos2)"> Actualizar</a></td>
+        </tr>
+    <tr>
+        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos3.Ano" placeholder="2019" class="form-control" autofocus></td>
+        <td>Marzo</td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td class="text-center"><a *ngIf="aux3==false" class='btn btn-info btn-xs' (click)="guardar(Datos3)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos3)"> Limpiar</a><a *ngIf="aux3==true" class="btn btn-primary btn-xs" (click)="Change(Datos3)"> Actualizar</a></td>
     </tr>
-<tr>
-    <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos3.Ano" placeholder="2019" class="form-control" autofocus></td>
-    <td>Marzo</td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos3.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td class="text-center"><a *ngIf="aux3==false" class='btn btn-info btn-xs' (click)="guardar(Datos3)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos3)"> Limpiar</a><a *ngIf="aux3==true" class="btn btn-danger btn-xs" (click)="Change(Datos3)"> Cambiar</a></td>
-</tr>
-<tr>
-        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos4.Ano" placeholder="2019" class="form-control" autofocus></td>
-    <td>Abril</td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td class="text-center"><a *ngIf="aux4==false" class='btn btn-info btn-xs' (click)="guardar(Datos4)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos4)"> Limpiar</a><a *ngIf="aux4==true" class="btn btn-danger btn-xs" (click)="Change(Datos4)"> Cambiar</a></td>
-</tr>
-<tr>
-        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos5.Ano" placeholder="2019" class="form-control" autofocus></td>
-    <td>Mayo</td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td class="text-center"><a *ngIf="aux5==false" class='btn btn-info btn-xs' (click)="guardar(Datos5)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos5)"> Limpiar</a><a *ngIf="aux5==true" class="btn btn-danger btn-xs" (click)="Change(Datos5)"> Cambiar</a></td>
-</tr>
-<tr>
-        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos6.Ano" placeholder="2019" class="form-control" autofocus></td>
-    <td>Junio</td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td class="text-center"><a *ngIf="aux6==false" class='btn btn-info btn-xs' (click)="guardar(Datos6)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos6)"> Limpiar</a><a *ngIf="aux6==true" class="btn btn-danger btn-xs" (click)="Change(Datos6)"> Cambiar</a></td>
-</tr>
-<tr>
-        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos7.Ano" placeholder="2019" class="form-control" autofocus></td>
-    <td>Julio</td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td class="text-center"><a *ngIf="aux7==false" class='btn btn-info btn-xs' (click)="guardar(Datos7)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos7)"> Limpiar</a><a *ngIf="aux7==true" class="btn btn-danger btn-xs" (click)="Change(Datos7)"> Cambiar</a></td>
-</tr>
-<tr>
-        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos8.Ano" placeholder="2019" class="form-control" autofocus></td>
-    <td>Agosto</td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td class="text-center"><a *ngIf="aux8==false" class='btn btn-info btn-xs' (click)="guardar(Datos8)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos8)"> Limpiar</a><a *ngIf="aux8==true" class="btn btn-danger btn-xs" (click)="Change(Datos8)"> Cambiar</a></td>
-</tr>
-<tr>
-        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos9.Ano" placeholder="2019" class="form-control" autofocus></td>
-    <td>Septiembre</td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td class="text-center"><a *ngIf="aux9==false" class='btn btn-info btn-xs' (click)="guardar(Datos9)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos9)"> Limpiar</a><a *ngIf="aux9==true" class="btn btn-danger btn-xs" (click)="Change(Datos9)"> Cambiar</a></td>
-</tr>
-<tr>
-        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos10.Ano" placeholder="2019" class="form-control" autofocus></td>
-    <td>Octubre</td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td class="text-center"><a *ngIf="aux10==false" class='btn btn-info btn-xs' (click)="guardar(Datos10)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos10)"> Limpiar</a><a *ngIf="aux10==true" class="btn btn-danger btn-xs" (click)="Change(Datos10)"> Cambiar</a></td>
-</tr>
-<tr>
-        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos11.Ano" placeholder="2019" class="form-control" autofocus></td>
-    <td>Noviembre</td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td class="text-center"><a *ngIf="aux11==false" class='btn btn-info btn-xs' (click)="guardar(Datos11)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos11)"> Limpiar</a><a *ngIf="aux11==true" class="btn btn-danger btn-xs" (click)="Change(Datos11)"> Cambiar</a></td>
-</tr>
-<tr>
-        <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos12.Ano" placeholder="2019" class="form-control" autofocus></td>
-    <td>Diciembre</td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
-    <td class="text-center"><a *ngIf="aux12==false" class='btn btn-info btn-xs' (click)="guardar(Datos12)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos12)"> Limpiar</a><a *ngIf="aux12==true" class="btn btn-danger btn-xs" (click)="Change(Datos12)"> Cambiar</a></td>
-</tr>
-</tbody>
-</table>
-<a class='btn btn-info btn-xs' (click)="Calcular()">Calcular</a>&nbsp;&nbsp;&nbsp;&nbsp;<span>Impuestos a pagar:</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>{{this.respuesta}}</span>
+    <tr>
+            <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos4.Ano" placeholder="2019" class="form-control" autofocus></td>
+        <td>Abril</td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos4.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td class="text-center"><a *ngIf="aux4==false" class='btn btn-info btn-xs' (click)="guardar(Datos4)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos4)"> Limpiar</a><a *ngIf="aux4==true" class="btn btn-primary btn-xs" (click)="Change(Datos4)"> Actualizar</a></td>
+    </tr>
+    <tr>
+            <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos5.Ano" placeholder="2019" class="form-control" autofocus></td>
+        <td>Mayo</td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos5.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td class="text-center"><a *ngIf="aux5==false" class='btn btn-info btn-xs' (click)="guardar(Datos5)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos5)"> Limpiar</a><a *ngIf="aux5==true" class="btn btn-primary btn-xs" (click)="Change(Datos5)"> Actualizar</a></td>
+    </tr>
+    <tr>
+            <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos6.Ano" placeholder="2019" class="form-control" autofocus></td>
+        <td>Junio</td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos6.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td class="text-center"><a *ngIf="aux6==false" class='btn btn-info btn-xs' (click)="guardar(Datos6)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos6)"> Limpiar</a><a *ngIf="aux6==true" class="btn btn-primary btn-xs" (click)="Change(Datos6)"> Actualizar</a></td>
+    </tr>
+    <tr>
+            <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos7.Ano" placeholder="2019" class="form-control" autofocus></td>
+        <td>Julio</td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos7.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td class="text-center"><a *ngIf="aux7==false" class='btn btn-info btn-xs' (click)="guardar(Datos7)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos7)"> Limpiar</a><a *ngIf="aux7==true" class="btn btn-primary btn-xs" (click)="Change(Datos7)"> Actualizar</a></td>
+    </tr>
+    <tr>
+            <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos8.Ano" placeholder="2019" class="form-control" autofocus></td>
+        <td>Agosto</td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos8.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td class="text-center"><a *ngIf="aux8==false" class='btn btn-info btn-xs' (click)="guardar(Datos8)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos8)"> Limpiar</a><a *ngIf="aux8==true" class="btn btn-primary btn-xs" (click)="Change(Datos8)"> Actualizar</a></td>
+    </tr>
+    <tr>
+            <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos9.Ano" placeholder="2019" class="form-control" autofocus></td>
+        <td>Septiembre</td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos9.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td class="text-center"><a *ngIf="aux9==false" class='btn btn-info btn-xs' (click)="guardar(Datos9)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos9)"> Limpiar</a><a *ngIf="aux9==true" class="btn btn-primary btn-xs" (click)="Change(Datos9)"> Actualizar</a></td>
+    </tr>
+    <tr>
+            <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos10.Ano" placeholder="2019" class="form-control" autofocus></td>
+        <td>Octubre</td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos10.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td class="text-center"><a *ngIf="aux10==false" class='btn btn-info btn-xs' (click)="guardar(Datos10)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos10)"> Limpiar</a><a *ngIf="aux10==true" class="btn btn-primary btn-xs" (click)="Change(Datos10)">Actualizarr</a></td>
+    </tr>
+    <tr>
+            <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos11.Ano" placeholder="2019" class="form-control" autofocus></td>
+        <td>Noviembre</td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos11.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td class="text-center"><a *ngIf="aux11==false" class='btn btn-info btn-xs' (click)="guardar(Datos11)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos11)"> Limpiar</a><a *ngIf="aux11==true" class="btn btn-primary btn-xs" (click)="Change(Datos11)">Actualizarr</a></td>
+    </tr>
+    <tr>
+            <td><input type="number" min=2019 max=3000 name="Ingrese" [(ngModel)]="Datos12.Ano" placeholder="2019" class="form-control" autofocus></td>
+        <td>Diciembre</td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.sueldoImpo" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.sueldoRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.HonorableImp" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td><input type="number" min=0 name="Ingrese" [(ngModel)]="Datos12.HonorableRete" placeholder="Ingrese" class="form-control" autofocus></td>
+        <td class="text-center"><a *ngIf="aux12==false" class='btn btn-info btn-xs' (click)="guardar(Datos12)"><span class="glyphicon glyphicon-edit"></span> Guardar</a> <a class="btn btn-danger btn-xs" (click)="Limpiar(Datos12)"> Limpiar</a><a *ngIf="aux12==true" class="btn btn-primary btn-xs" (click)="Change(Datos12)">Actualizarr</a></td>
+    </tr>
+    </tbody>
+    </table>
+    <a class='btn btn-info btn-xs' (click)="Calcular()">Calcular</a>&nbsp;&nbsp;&nbsp;&nbsp;<span>Impuestos a pagar:</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>{{this.respuesta}}</span>
+<div id="boton">
+<a class='btn btn-info btn-xs' (click)="Calculo_Promedio()">Calcular Promedio</a>&nbsp;&nbsp;&nbsp;&nbsp;<span>Impuestos a pagar:</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>{{this.respuestaP}}</span>
+</div>
+<div id="boton">
+<a class='btn btn-info btn-xs' (click)="Calculao_UltimaRow()">Calculo Ultima Row</a>&nbsp;&nbsp;&nbsp;&nbsp;<span>Impuestos a pagar:</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>{{this.respuestaUR}}</span>
+</div>
+
+    
 
     
