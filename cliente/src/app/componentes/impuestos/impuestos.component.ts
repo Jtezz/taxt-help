@@ -4,7 +4,6 @@ import {RowsService} from '../../servicios/rows.service'
 import {UsuarioService} from '../../servicios/usuario.service'
 import {Usuario} from '../../modelos/usuario'
 import { Data } from '@angular/router';
-import { homedir } from 'os';
 @Component({
   selector: 'app-impuestos',
   templateUrl: './impuestos.component.html',
@@ -57,6 +56,8 @@ HonorableImp:0,
 HonorableRete:0
 }
 public respuesta:number;
+public respuestaP:number;
+public respuestaUR:number;
 public Datos4:datos={
 Usuario:this.usserLogged.id,
 Ano:2019,
@@ -170,12 +171,40 @@ this.ImpuestosServicio.getTablaImpu().subscribe(
   },
   err =>console.error(err)
 );
-}
 
+}
+Calculo_Promedio(){
+  this.aux();
+  var sum:number=0;//sumamos todos las utilidades (sueldo+honorarios)
+  var sum2:number=0;//sumamos todos las retenciones
+  var cont:number=0;//contador para saber cuantos datos tengo 
+  var total:number=0;
+  var promedio:number=0;
+  var promedio2:number=0;
+  var porcentaje:number=0;
+  var descuento:number=0;
+
+  for (let i in this.data){
+    if (this.data[i].sueldoImpo != null){
+      sum=sum+(this.data[i].sueldoImpo+(this.data[i].HonorableImp * 0.7));
+      sum2=sum2+(this.data[i].sueldoRete+this.data[i].HonorableRete);
+      cont=cont+1;
+    }
+  }
+  promedio=(sum/cont)*12;
+  promedio2=(sum2/cont)*12;
+
+  for (let i in this.TablaImpuesto){
+    if(this.TablaImpuesto[i].rango1< promedio && this.TablaImpuesto[i].rango2>promedio){
+      porcentaje=this.TablaImpuesto[i].factor;
+      descuento=this.TablaImpuesto[i].rebajar;
+    }    
+  }
+  this.respuestaP=(promedio)*porcentaje - (promedio2+descuento);
+}
 
 Calculao_UltimaRow(){
   this.aux();
-  this.aparece=true;
   var temp:any;
   var TsueldoImpo:number=0;
   var TsueldoRete:number=0;
@@ -211,10 +240,6 @@ Calculao_UltimaRow(){
     ThonoImpo=ThonoImpo+aux[i].HonorableImp;
     ThonoRete=ThonoRete+aux[i].HonorableRete;
   }
-  console.log(TsueldoImpo)
-  console.log(TsueldoRete)
-  console.log(ThonoImpo)
-  console.log(ThonoRete)
 
   for (let i in this.TablaImpuesto){
     if(this.TablaImpuesto[i].rango1<(TsueldoImpo + (ThonoImpo*0.7)) && this.TablaImpuesto[i].rango2>(TsueldoImpo+(ThonoImpo*0.7))){
@@ -222,10 +247,11 @@ Calculao_UltimaRow(){
       descuento=this.TablaImpuesto[i].rebajar;
     }    
   }
-  this.respuesta=((TsueldoImpo + (ThonoImpo*0.7))*porcentaje)-(TsueldoRete+ThonoRete+descuento);
+  this.respuestaUR=((TsueldoImpo + (ThonoImpo*0.7))*porcentaje)-(TsueldoRete+ThonoRete+descuento);
   this.aux();
 }
 aux(){
+  this.aparece=true;
   console.log(this.TablaImpuesto)
   for (let i in this.DataUser){
     for(let j in this.data){
@@ -420,6 +446,7 @@ err => console.log(err)
 )
 }
 Calcular(){
+  this.aparece=true;
   var Hono:number=this.Datos1.HonorableImp+this.Datos2.HonorableImp+this.Datos3.HonorableImp+this.Datos4.HonorableImp+this.Datos5.HonorableImp+this.Datos6.HonorableImp+this.Datos7.HonorableImp+this.Datos8.HonorableImp+this.Datos9.HonorableImp+this.Datos10.HonorableImp+this.Datos11.HonorableImp+this.Datos12.HonorableImp;
   var suel:number=this.Datos1.sueldoImpo+this.Datos2.sueldoImpo+this.Datos3.sueldoImpo+this.Datos4.sueldoImpo+this.Datos5.sueldoImpo+this.Datos6.sueldoImpo+this.Datos7.sueldoImpo+this.Datos8.sueldoImpo+this.Datos9.sueldoImpo+this.Datos10.sueldoImpo+this.Datos11.sueldoImpo+this.Datos12.sueldoImpo;
   var suelRet:number=this.Datos1.sueldoRete+this.Datos2.sueldoRete+this.Datos3.sueldoRete+this.Datos4.sueldoRete+this.Datos5.sueldoRete+this.Datos6.sueldoRete+this.Datos7.sueldoRete+this.Datos8.sueldoRete+this.Datos9.sueldoRete+this.Datos10.sueldoRete+this.Datos11.sueldoRete+this.Datos12.sueldoRete;

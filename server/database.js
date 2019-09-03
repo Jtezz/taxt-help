@@ -6,7 +6,7 @@ const mysql=require('mysql');
 const mysqlConnection = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'pongasuclave',
+    password:'julieta8810',
     database:'taxhelp',//por confirmar
     port: 3306
 });

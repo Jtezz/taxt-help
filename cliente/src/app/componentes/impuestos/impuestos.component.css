@@ -15,3 +15,6 @@ transition: 0.5s;
     box-shadow: 3px 3px 0px transparent;
     transition: 0.5s;
     }
+#boton{
+    margin-top: 2px;
+}
