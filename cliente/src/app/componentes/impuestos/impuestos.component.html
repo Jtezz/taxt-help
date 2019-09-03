@@ -1,12 +1,9 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<div class="page-header">
-    <h1 class="h1">Tax Help <small>te ayudamos con tus impuesto!</small></h1>    
-</div>
-
-
-    <div *ngIf="aparece==false">
+    
+    <div class="lead" *ngIf="aparece==false">
+        <h1 class="page-header">Tax Help <small>te ayudamos con tus impuestos!</small></h1>
         <h3>Hola {{usserLogged.nombre}}, gracias por preferirnos!!</h3>
         <p>En <strong>Taxt Help</strong> tenemos 3 formas para calcular tus impuesto:</p>
     <ul>
@@ -18,7 +15,7 @@
         <button type="button" class="btn btn-primary btn-lg margin-right" (click)="aux()">Continuar</button>
     </div>
     <div class="container" *ngIf="aparece==true">
-    
+        
     <div class="container">
         <div class="row col-md-10 col-md-offset-1 custyle">
         <table class="table table-striped custab">
