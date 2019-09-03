@@ -2,15 +2,19 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <div class="page-header">
-    <h1 class="h1">Tax Help <small>te ayudamos con tus impuesto!</small></h1>
-    <h2><small>¡Tenemos 3 tipos de calculo de impuesto!</small></h2>
-    <h3><small>De forma manual, utilizando la ultima cotizacion y calculando el promedio de tus ingresos</small></h3>
-    
+    <h1 class="h1">Tax Help <small>te ayudamos con tus impuesto!</small></h1>    
 </div>
 
 
-    <div class="lead" *ngIf="aparece==false">
-    <p>Hola {{usserLogged.nombre}}, gracias por preferirnos!!</p>
+    <div *ngIf="aparece==false">
+        <h3>Hola {{usserLogged.nombre}}, gracias por preferirnos!!</h3>
+        <p>En <strong>Taxt Help</strong> tenemos 3 formas para calcular tus impuesto:</p>
+    <ul>
+        <li type="disc"><strong>Forma manual:</strong> tu ingresas los datos a la tabla y se calcula todo en base a los datos ingresados</li>
+        <li type="disc"><strong>Calculo de promedio:</strong> calculamos el valor de tus impuestos con el promedio de los valores que esten presentes en la tabla</li>
+        <li type="disc"><strong>Calculo repitiendo ultima fila:</strong> Ingresas tus datos y los datos faltantes son reemplazados por el ultimo mes que insertaste a la tabla</li>
+    </ul>
+    <p>**Si el valor es positivo este monto es la diferencia que debes pagar en impuestos anuales , pero de los contrario si el valor el negativo tienes derecho a devolucion de impuestos**</p>
         <button type="button" class="btn btn-primary btn-lg margin-right" (click)="aux()">Continuar</button>
     </div>
     <div class="container" *ngIf="aparece==true">

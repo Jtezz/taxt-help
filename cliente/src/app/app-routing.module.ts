@@ -7,7 +7,7 @@ import { RegisterComponent } from './componentes/register/register.component';
 
 const routes: Routes = [
   {
-    path:'sing-up',
+    path:'',
     component: UsuarioComponent
   },
   {
